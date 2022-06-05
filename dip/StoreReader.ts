@@ -1,3 +1,3 @@
-export default interface StoreReader {
+export interface StoreReader {
   read(id: number): string
 }

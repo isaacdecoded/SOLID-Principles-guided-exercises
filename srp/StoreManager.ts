@@ -4,9 +4,9 @@ import {
   readFileSync,
 } from 'fs'
 import path from 'path'
-import LoggerManager from './LoggerManager'
+import { LoggerManager } from './LoggerManager'
 
-export default class StoreManager {
+export class StoreManager {
   directory?: string
   logger: LoggerManager
 
@@ -18,8 +18,8 @@ export default class StoreManager {
   public async save(id: number, message: string): Promise<any> {
     try {
       this.logger.saving(id)
-      const fileFullName = this.getFileInfo(id)
-      await fsp.writeFile(fileFullName, message)
+      const filePath = this.getFilePath(id)
+      await fsp.writeFile(filePath, message)
       this.logger.saved(id)
     } catch (e) {
       this.logger.errorSaving(id)
@@ -28,16 +28,16 @@ export default class StoreManager {
 
   public read(id: number): string {
     this.logger.readingStore(id)
-    const fileFullName = this.getFileInfo(id)
-    const exists = existsSync(fileFullName)
+    const filePath = this.getFilePath(id)
+    const exists = existsSync(filePath)
     if(!exists) {
       this.logger.messageNotFound(id)
       return ''
     }
-    return readFileSync(fileFullName, { encoding: 'ASCII' })
+    return readFileSync(filePath, { encoding: 'ASCII' })
   }
 
-  public getFileInfo(id: number) {
+  public getFilePath(id: number) {
     return path.join(__dirname, this.directory, `${id}.txt`)
   }
 }

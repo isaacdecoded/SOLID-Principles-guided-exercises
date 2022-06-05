@@ -1,7 +1,7 @@
-import StoreReader from './StoreReader'
-import StoreWriter from './StoreWriter'
+import { StoreReader } from './StoreReader'
+import { StoreWriter } from './StoreWriter'
 
-export default class MessageManager {
+export class MessageService {
   storeReader: StoreReader
   storeWriter: StoreWriter
 
@@ -10,7 +10,7 @@ export default class MessageManager {
     this.storeWriter = storeWriter
   }
 
-  public async save(id: number, message: string) {
+  public save(id: number, message: string) {
     this.storeWriter.save(id, message)
   }
 

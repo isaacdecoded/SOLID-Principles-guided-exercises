@@ -1,6 +1,6 @@
-import LoggerManager from '../srp/LoggerManager'
+import { LoggerManager } from '../srp/LoggerManager'
 
-export default class LoggerManagerSentry implements LoggerManager {
+export class LoggerManagerSentry implements LoggerManager {
   public saving(id: number): void {
     this.SentryLogger(`Saving message ${id}.`)
   }

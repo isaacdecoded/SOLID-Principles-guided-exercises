@@ -14,6 +14,6 @@ Separate MessageStore features into classes by responsibility, undestanding thes
 
 We can identify the following reasons to change:
 
-- storage
-- logging
-- caching
+- storage actions
+- logging actions
+- caching actions

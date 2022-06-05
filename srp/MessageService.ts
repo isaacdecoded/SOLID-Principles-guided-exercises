@@ -1,19 +1,19 @@
-import StoreManager from './StoreManager'
-import CacheManager from './CacheManager'
-import LoggerManager from './LoggerManager'
+import { StoreManager } from './StoreManager'
+import { CacheManager } from './CacheManager'
+import { LoggerManager } from './LoggerManager'
 
-export default class MessageManager {
+export class MessageService {
   storeManager : StoreManager
   cacheManager: CacheManager
-  loggerManager: LoggerManager
+  private loggerManager: LoggerManager
 
   constructor(directory: string, loggerManager: LoggerManager) {
     this.loggerManager = loggerManager
-    this.storeManager = new StoreManager(directory, this.Logger)
-    this.cacheManager = new CacheManager(this.Logger)
+    this.storeManager = new StoreManager(directory, this.logger)
+    this.cacheManager = new CacheManager(this.logger)
   }
 
-  get Logger(): LoggerManager {
+  get logger(): LoggerManager {
     return this.loggerManager
   }
 

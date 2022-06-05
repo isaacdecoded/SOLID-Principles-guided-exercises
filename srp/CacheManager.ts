@@ -1,7 +1,7 @@
 import { strict as strictAssert } from 'assert'
-import LoggerManager from './LoggerManager'
+import { LoggerManager } from './LoggerManager'
 
-export default class StoreCache {
+export class CacheManager {
   cache: any
   logger: LoggerManager
 

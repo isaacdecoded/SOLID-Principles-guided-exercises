@@ -1,3 +1,3 @@
-export default interface FileLocator {
-  getFileInfo(id: number): string
+export interface FileLocator {
+  getFilePath(id: number): string
 }

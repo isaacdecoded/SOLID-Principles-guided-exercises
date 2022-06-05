@@ -10,5 +10,5 @@ From the SRP solution classes, extend some behavior to demostrate an OCP scenari
 
 ### Possible solution
 
-Using inheritance we can extend the MessageStore class to use some custom monitoring service for logging.
-Also, the custom monitoring sevice must implement the same members for logging that MessageStore expects.
+Using inheritance we can extend the MessageService class to use some custom monitoring service for logging.
+Also, this monitoring sevice class must implement the same members for logging that MessageService expects.

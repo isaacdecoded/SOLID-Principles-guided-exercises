@@ -1,4 +1,4 @@
-export default class LoggerManager {
+export class LoggerManager {
   public saving(id: number): void {
     console.log(`Saving message ${id}.`)
   }
