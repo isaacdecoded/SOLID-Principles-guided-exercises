@@ -1,7 +1,9 @@
 {
-  "name": "start-solid",
+  "name": "solid-principles-guided-exercises",
   "version": "1.0.0",
   "main": "index.js",
+  "private": false,
+  "author": "Isaac Herrera (https://github.com/isaacdecoded)",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc"
